@@ -1,4 +1,5 @@
 # User
-  user folder in C:\Users\{USERNAME}\AppData\Roaming\Code\User
-# extension 
-  extensions list from code --list-extensions
+  user folder in "C:\Users\{USERNAME}\AppData\Roaming\Code\User"
+# extensions
+  extensions list from "code --list-extensions"
+  
