@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { BUILD_PATH } from '../utils/paths';
+import { success } from '../func/log';
 
 const buildExists = async () => {
   try {
@@ -30,4 +31,5 @@ export const addFile = async (
   const pathToFile = path.join(BUILD_PATH, name);
 
   await fs.writeFile( pathToFile, data, options);
+  success(`Success added ${name} to build!`);
 }
