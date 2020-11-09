@@ -1,0 +1,32 @@
+{
+  "name": "vs-code-config",
+  "version": "0.1.0",
+  "description": "simple cli for vscode",
+  "main": "./src/cli.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn ./src/cli.ts",
+    "start": "ts-node ./src/cli.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allohamora/vs-code-config.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allohamora/vs-code-config/issues"
+  },
+  "homepage": "https://github.com/Allohamora/vs-code-config#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.1",
+    "@types/node": "^14.14.6",
+    "ts-node-dev": "^1.0.0"
+  }
+}
