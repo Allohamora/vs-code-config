@@ -1,7 +1,11 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
+import { promisify } from 'util';
 import { BUILD_PATH } from '../utils/paths';
 import { success } from '../func/log';
+import * as ncpCallback from 'ncp';
+
+const ncp = promisify(ncpCallback);
 
 const buildExists = async () => {
   try {
@@ -32,4 +36,17 @@ export const addFile = async (
 
   await fs.writeFile( pathToFile, data, options);
   success(`Success added ${name} to build!`);
-}
+};
+
+export const copy = async (from: string, dir: string = "") => {
+  await buildDir();
+
+  try {
+    await ncp(from, path.join(BUILD_PATH, dir));
+
+    success(`Success added ${from} to build!`);
+  } catch (e) {
+    // TODO: added error log
+    console.error(e);
+  }
+};
