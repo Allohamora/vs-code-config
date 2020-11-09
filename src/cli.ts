@@ -1,5 +1,5 @@
 import { prompt } from 'inquirer';
-import { BUILD_EXTENSIONS, MAIN_LIST } from './utils/types';
+import { BUILD_EXTENSIONS, BUILD_SETTINGS, MAIN_LIST } from './utils/types';
 import { getHandler } from './handlersStrategy';
 
 const prompts = [
@@ -11,6 +11,10 @@ const prompts = [
       {
         value: BUILD_EXTENSIONS,
         name: 'build extensions'
+      },
+      {
+        value: BUILD_SETTINGS,
+        name: 'build settings'
       }
     ] 
   },
