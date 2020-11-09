@@ -1,11 +1,10 @@
 import { getExtensions } from '../func/getExtensions';
-import { Handler } from '../handlersStrategy';
+import { Script } from '../scriptsStrategy';
 import { addFile } from '../func/build';
+import { EXTENSIONS_FILE_NAME } from '../utils/names';
 
-const FILE_NAME = 'extensions.json';
-
-export const buildExtensions: Handler = async () => {
+export const buildExtensions: Script = async () => {
   const extensions = await getExtensions();
 
-  await addFile(FILE_NAME, JSON.stringify(extensions));
+  await addFile(EXTENSIONS_FILE_NAME, JSON.stringify(extensions));
 };

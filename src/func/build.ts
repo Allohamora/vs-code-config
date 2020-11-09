@@ -1,13 +1,15 @@
-import { promises as fs } from 'fs';
 import * as path from 'path';
+import * as ncpCallback from 'ncp';
+import { promises as fs } from 'fs';
 import { promisify } from 'util';
 import { BUILD_PATH } from '../utils/paths';
-import { success } from '../func/log';
-import * as ncpCallback from 'ncp';
+import { error, success } from '../func/log';
 
 const ncp = promisify(ncpCallback);
 
-const buildExists = async () => {
+const successAdded = (item: string) => success(`Success added ${item} to build!`);
+
+const isBuildDirExists = async () => {
   try {
     await fs.access(BUILD_PATH);
 
@@ -18,7 +20,7 @@ const buildExists = async () => {
 };
 
 const buildDir = async () => {
-  const isBuildExists = await buildExists();
+  const isBuildExists = await isBuildDirExists();
 
   if( isBuildExists ) return;
 
@@ -35,18 +37,20 @@ export const addFile = async (
   const pathToFile = path.join(BUILD_PATH, name);
 
   await fs.writeFile( pathToFile, data, options);
-  success(`Success added ${name} to build!`);
+
+  successAdded(name);
 };
 
 export const copy = async (from: string, dir: string = "") => {
   await buildDir();
 
-  try {
-    await ncp(from, path.join(BUILD_PATH, dir));
+  const to = path.join(BUILD_PATH, dir);
 
-    success(`Success added ${from} to build!`);
+  try {
+    await ncp(from, to);
+
+    successAdded(from);
   } catch (e) {
-    // TODO: added error log
-    console.error(e);
+    error(`Error with copy from - ${from}, to - ${to}, error - ${e}`);
   }
 };

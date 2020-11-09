@@ -6,11 +6,11 @@ import { buildSnippets } from './scripts/buildSnippets';
 import { buildFull } from './scripts/buildFull';
 
 
-export type Handler = () => Promise<void>;
+export type Script = () => Promise<void>;
 
-type HandlersStrategy = Strategy<Handler>;
+type ScriptsStrategy = Strategy<Script>;
 
-const handlersStrategy: HandlersStrategy = {
+const scriptsStrategy: ScriptsStrategy = {
   [BUILD_EXTENSIONS]: buildExtensions,
   [BUILD_SETTINGS]: buildSettings,
   [BUILD_SNIPPETS]: buildSnippets,
@@ -19,4 +19,4 @@ const handlersStrategy: HandlersStrategy = {
   default: async () => {}
 };
 
-export const getHandler = getFromStrategy(handlersStrategy);
+export const getScript = getFromStrategy(scriptsStrategy);

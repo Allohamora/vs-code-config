@@ -1,10 +1,9 @@
 import { addFile } from "../func/build";
 import { getSettings } from "../func/getSettings";
-
-const FILE_NAME = 'settings.json';
+import { SETTINGS_FILE_NAME } from "../utils/names";
 
 export const buildSettings = async () => {
   const settings = await getSettings();
 
-  await addFile(FILE_NAME, settings);
+  await addFile(SETTINGS_FILE_NAME, settings);
 };

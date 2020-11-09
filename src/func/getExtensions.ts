@@ -3,14 +3,14 @@ import { promisify } from 'util';
 
 const exec = promisify(execCallback);
 
-const mapExtensionsToArray = (extensions: string) => {
-  return extensions
+const mapExtensionsStdoutToArray = (stdout: string) => {
+  return stdout
           .split('\n')
           .filter(extension => extension !== '');
 }
 
 export const getExtensions = async () => {
-  const { stdout } = await exec(`code --list-extensions 2>&1 | tee`);
+  const { stdout } = await exec('code --list-extensions 2>&1 | tee');
 
-  return mapExtensionsToArray(stdout);
+  return mapExtensionsStdoutToArray(stdout);
 }

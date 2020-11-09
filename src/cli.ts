@@ -1,6 +1,6 @@
 import { prompt } from 'inquirer';
 import { BUILD_EXTENSIONS, BUILD_FULL, BUILD_SETTINGS, BUILD_SNIPPETS, MAIN_LIST } from './utils/types';
-import { getHandler } from './handlersStrategy';
+import { getScript } from './scriptsStrategy';
 
 const prompts = [
   {
@@ -32,9 +32,9 @@ const main = async () => {
   const answers = await prompt(prompts);
 
   const answer = answers[MAIN_LIST];
-  const handler = getHandler(answer);
+  const script = getScript(answer);
   
-  await handler();
+  await script();
 };
 
 main();
