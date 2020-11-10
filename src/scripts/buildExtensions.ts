@@ -5,7 +5,7 @@ import { EXTENSIONS_FILE_NAME } from '../utils/names';
 import { info } from '../func/log';
 
 export const buildExtensions: Script = async () => {
-  info('Start build for extensions!');
+  info('Started build for extensions!');
   
   const extensions = await getExtensions();
 

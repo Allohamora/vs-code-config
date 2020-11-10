@@ -5,7 +5,7 @@ import { success, info } from '../func/log';
 import { Script } from "../utils/types";
 
 export const installExtensions: Script = async () => {
-  info('Start install for extensions!');
+  info('Started install for extensions!');
   
   const extensionsJSON = await getFile(EXTENSIONS_FILE_NAME);
 

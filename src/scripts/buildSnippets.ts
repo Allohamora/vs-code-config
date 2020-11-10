@@ -5,7 +5,7 @@ import { SNIPPETS_PATH } from '../utils/paths';
 import { Script } from "../utils/types";
 
 export const buildSnippets: Script = async () => {
-  info('Start build for snippets');
+  info('Started build for snippets');
 
   await copy(SNIPPETS_PATH, SNIPPETS_DIR_NAME);
 };
