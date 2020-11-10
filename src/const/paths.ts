@@ -1,12 +1,17 @@
 import * as path from 'path';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export const BUILD_PATH = path.join(__dirname, '../../build');
 
 // code paths
-// computed only for Linux!
-const { HOME } = process.env;
+const { 
+  HOME, 
+  VSCODE_PATH: RAW_VSCODE_PATH
+} = process.env;
 
-export const CODE_PATH = path.join(HOME, '/.config/Code');
-export const USER_PATH = path.join(CODE_PATH, '/User');
+const VSCODE_PATH = RAW_VSCODE_PATH.replace('<HOME>', HOME);
+export const USER_PATH = path.join(VSCODE_PATH, '/User');
 export const SETTINGS_PATH = path.join(USER_PATH, '/settings.json');
 export const SNIPPETS_PATH = path.join(USER_PATH, '/snippets');
