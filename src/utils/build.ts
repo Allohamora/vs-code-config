@@ -1,43 +1,30 @@
 import * as path from 'path';
-import { promises as fs } from 'fs';
-import { BUILD_PATH } from '../utils/paths';
-import { error, success } from '../func/log';
-import { ncp } from '../utils/ncp';
-
-const successAdded = (item: string) => success(`Success added ${item} to build!`);
+import * as fs from 'fs-extra';
+import { BUILD_PATH } from '../const/paths';
+import { ncp } from './ncp';
 
 export const getPath = (pathName: string) => path.join(BUILD_PATH, pathName);
 
-const isBuildDirExists = async () => {
-  try {
-    await fs.access(BUILD_PATH);
-
-    return true;
-  } catch (err) {
-    return false;
-  }
-};
+const isBuildDirExists = async () => await fs.pathExists(BUILD_PATH);
 
 const buildDir = async () => {
   const isBuildExists = await isBuildDirExists();
 
   if( isBuildExists ) return;
 
-  await fs.mkdir(BUILD_PATH, { recursive: true });
+  await fs.mkdir(BUILD_PATH);
 };
 
 export const addFile = async (
   name: string, 
   data: Parameters<typeof fs.writeFile>[1], 
-  options?: Parameters<typeof fs.writeFile>[2]
+  options?: Parameters<typeof fs.writeFile>[2],
 ) => {
   await buildDir();
 
   const pathToFile = getPath(name);
 
   await fs.writeFile(pathToFile, data, options);
-
-  successAdded(name);
 };
 
 export const copy = async (from: string, dir: string = "") => {
@@ -45,13 +32,7 @@ export const copy = async (from: string, dir: string = "") => {
 
   const to = getPath(dir);
 
-  try {
-    await ncp(from, to);
-
-    successAdded(from);
-  } catch (e) {
-    error(`Error with copy from - ${from}, to - ${to}, error - ${e}`);
-  }
+  await ncp(from, to);
 };
 
 export const getFile = async (name: string) => {

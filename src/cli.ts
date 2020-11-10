@@ -1,61 +1,24 @@
-import { prompt } from 'inquirer';
-import { MAIN_LIST, Script } from './utils/types';
-import { buildExtensions } from './scripts/buildExtensions';
-import { buildSettings } from './scripts/buildSettings';
-import { buildSnippets } from './scripts/buildSnippets';
-import { buildFull } from './scripts/buildFull';
-import { installExtensions } from './scripts/installExtensions';
-import { installSettings } from './scripts/installSettings';
-import { installSnippets } from './scripts/installSnippets';
-import { installFull } from './scripts/installFull';
+import { MAIN_LIST } from './const/types';
+import { buildHandler } from './scripts/build';
+import { installHandler } from './scripts/install';
+import { createList } from './utils/list';
 
-const prompts = [
+const choices = [
   {
-    type: 'list', 
-    message: 'choice command',
-    name: MAIN_LIST,
-    choices: [
-      {
-        value: buildExtensions,
-        name: 'build extensions'
-      },
-      {
-        value: buildSettings,
-        name: 'build settings'
-      },
-      {
-        value: buildSnippets,
-        name: 'build snippets'
-      },
-      {
-        value: buildFull,
-        name: 'build full'
-      },
-      {
-        value: installExtensions,
-        name: 'install extensions from build'
-      },
-      {
-        value: installSettings,
-        name: 'install settings from build'
-      },
-      {
-        value: installSnippets,
-        name: 'install snippets from build'
-      },
-      {
-        value: installFull,
-        name: 'install full from build'
-      }
-    ] 
+    name: 'build section',
+    value: buildHandler,
   },
-];
+  {
+    name: 'install section',
+    value: installHandler
+  }
+]
 
-const main = async () => {
-  const answers = await prompt(prompts);
+const main = async () => await createList({
+  list_name: MAIN_LIST,
+  list_message: 'choose section:',
 
-  const handler = answers[MAIN_LIST] as Script;
-  await handler();
-};
+  choices
+});
 
 main();

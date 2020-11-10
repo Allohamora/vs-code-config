@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs';
-import { SETTINGS_PATH } from '../utils/paths';
+import * as fs from 'fs-extra';
+import { SETTINGS_PATH } from '../const/paths';
 
 export const getSettings = async () => {
   const buffer = await fs.readFile(SETTINGS_PATH);
