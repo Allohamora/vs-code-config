@@ -1,0 +1,204 @@
+{
+    "window.zoomLevel": 0,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showExpandedAbbreviation": "never",
+    "files.associations": {
+        "*.js": "javascript",
+        "*.jsx": "javascriptreact",
+        "*.py": "python"
+    },
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.tokenColorCustomizations": {
+        "semanticHighlighting": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "json.schemas": [
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "fastFolderStructure.structures": [
+        {
+          "name": "full-component",
+          "structure": [
+            {
+              "fileName": "<FFSName>.js",
+              "template": "component-with-hook"
+            },
+            {
+              "fileName": "index.js",
+              "template": "index"
+            },
+            {
+              "fileName": "styles.js",
+              "template": "styles",
+            },
+            {
+              "fileName": "use<FFSName>.js",
+              "template": "hook"
+            },
+            {
+              "fileName": "utils.js",
+            }
+          ]
+        },
+        {
+          "name": "full-component.ts",
+          "structure": [
+            {
+              "fileName": "<FFSName>.tsx",
+              "template": "component-with-hook.ts"
+            },
+            {
+              "fileName": "index.ts",
+              "template": "index"
+            },
+            {
+              "fileName": "styles.ts",
+              "template": "styles",
+            },
+            {
+              "fileName": "use<FFSName>.ts",
+              "template": "hook.ts"
+            },
+            {
+              "fileName": "utils.ts",
+            }
+          ]
+        },
+        {
+          "name": "base-component",
+          "structure": [
+            {
+              "fileName": "<FFSName>.js",
+              "template": "component"
+            },
+            {
+              "fileName": "index.js",
+              "template": "index"
+            },
+            {
+              "fileName": "styles.js",
+              "template": "styles",
+            }
+          ]
+        },
+        {
+          "name": "base-component.ts",
+          "structure": [
+            {
+              "fileName": "<FFSName>.tsx",
+              "template": "component.ts"
+            },
+            {
+              "fileName": "index.ts",
+              "template": "index"
+            },
+            {
+              "fileName": "styles.ts",
+              "template": "styles",
+            }
+          ]
+        }
+      ],
+      "fastFolderStructure.fileTemplates": {
+        "component": [
+          "import React from 'react';",
+          "",
+          "export const <FFSName> = (props) => {",
+          "  return (",
+          "    <div>",
+          "      <FFSName>",
+          "    </div>",
+          "  );",
+          "};",
+          ""
+        ],
+        "component.ts": [
+          "import React from 'react';",
+          "",
+          "interface <FFSName>Props {",
+          "",
+          "};",
+          "",
+          "export const <FFSName>: React.FC<<FFSName>Props> = (props) => {",
+          "",
+          "  return (",
+          "    <div>",
+          "      <FFSName>",
+          "    </div>",
+          "  );",
+          "};",
+          ""
+        ],
+        "component-with-hook": [
+          "import React from 'react';",
+          "import { use<FFSName> } from './use<FFSName>';",
+          "",
+          "export const <FFSName> = (props) => {",
+          "  const {} = use<FFSName>();",
+          "",
+          "  return (",
+          "    <div>",
+          "      <FFSName>",
+          "    </div>",
+          "  );",
+          "};",
+          ""
+        ],
+        "component-with-hook.ts": [
+          "import React from 'react';",
+          "import { use<FFSName> } from './use<FFSName>';",
+          "",
+          "interface <FFSName>Props {",
+          "",
+          "};",
+          "",
+          "export const <FFSName>: React.FC<<FFSName>Props> = (props) => {",
+          "  const {} = use<FFSName>();",
+          "",
+          "  return (",
+          "    <div>",
+          "      <FFSName>",
+          "    </div>",
+          "  );",
+          "};",
+          ""
+        ],
+        "hook": [
+          "export const use<FFSName> = () => {",
+          "  return {};",
+          "};"
+        ],
+        "hook.ts": [
+          "interface use<FFSName>Props {",
+          "",
+          "};",
+          "",
+          "export const use<FFSName> = (props: use<FFSName>Props) => {",
+          "  return {};",
+          "};"
+        ],
+        "index": [
+          "export * from './<FFSName>';"
+        ],
+        "styles": [
+          "import styled from 'styles-components';",
+          ""
+        ]
+      }
+}
