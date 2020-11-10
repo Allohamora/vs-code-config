@@ -1,5 +1,5 @@
 import { getExtensions } from '../func/getExtensions';
-import { Script } from '../scriptsStrategy';
+import { Script } from '../utils/types';
 import { addFile } from '../func/build';
 import { EXTENSIONS_FILE_NAME } from '../utils/names';
 

@@ -54,3 +54,12 @@ export const copy = async (from: string, dir: string = "") => {
     error(`Error with copy from - ${from}, to - ${to}, error - ${e}`);
   }
 };
+
+export const getFile = async (name: string) => {
+  const fullPath = path.join(BUILD_PATH, name);
+
+  const file = await fs.readFile(fullPath);
+  const string = file.toString();
+
+  return string;
+};

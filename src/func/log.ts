@@ -1,6 +1,6 @@
 import * as chalk from 'chalk';
 
-const log = console.log;
+export const log = console.log;
 const errorLog = console.error;
 
 const successColor = chalk.rgb(61, 204, 83);

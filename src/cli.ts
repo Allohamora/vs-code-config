@@ -1,6 +1,10 @@
 import { prompt } from 'inquirer';
-import { BUILD_EXTENSIONS, BUILD_FULL, BUILD_SETTINGS, BUILD_SNIPPETS, MAIN_LIST } from './utils/types';
-import { getScript } from './scriptsStrategy';
+import { MAIN_LIST, Script } from './utils/types';
+import { buildExtensions } from './scripts/buildExtensions';
+import { buildSettings } from './scripts/buildSettings';
+import { buildSnippets } from './scripts/buildSnippets';
+import { buildFull } from './scripts/buildFull';
+import { installExtensions } from './scripts/installExtensions';
 
 const prompts = [
   {
@@ -9,20 +13,24 @@ const prompts = [
     name: MAIN_LIST,
     choices: [
       {
-        value: BUILD_EXTENSIONS,
+        value: buildExtensions,
         name: 'build extensions'
       },
       {
-        value: BUILD_SETTINGS,
+        value: buildSettings,
         name: 'build settings'
       },
       {
-        value: BUILD_SNIPPETS,
+        value: buildSnippets,
         name: 'build snippets'
       },
       {
-        value: BUILD_FULL,
+        value: buildFull,
         name: 'build full'
+      },
+      {
+        value: installExtensions,
+        name: 'install extensions from build'
       }
     ] 
   },
@@ -31,10 +39,8 @@ const prompts = [
 const main = async () => {
   const answers = await prompt(prompts);
 
-  const answer = answers[MAIN_LIST];
-  const script = getScript(answer);
-  
-  await script();
+  const handler = answers[MAIN_LIST] as Script;
+  await handler();
 };
 
 main();

@@ -1,5 +1,5 @@
 import { success } from "../func/log";
-import { Script } from "../scriptsStrategy";
+import { Script } from "../utils/types";
 import { buildExtensions } from "./buildExtensions";
 import { buildSettings } from "./buildSettings";
 import { buildSnippets } from "./buildSnippets";
