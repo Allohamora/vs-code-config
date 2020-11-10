@@ -1,11 +1,13 @@
 {
   "name": "vs-code-config",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "simple config cli for vscode",
   "main": "./src/cli.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn ./src/cli.ts",
-    "start": "ts-node ./src/cli.ts"
+    "dev": "ts-node-dev --respawn -r tsconfig-paths/register ./src/cli.ts",
+    "start": "ts-node -r tsconfig-paths/register ./src/cli.ts",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,13 @@
     "@types/inquirer": "^7.3.1",
     "@types/ncp": "^2.0.4",
     "@types/node": "^14.14.6",
-    "ts-node-dev": "^1.0.0"
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
+    "ts-node-dev": "^1.0.0",
+    "tsconfig-paths": "^3.9.0"
   }
 }

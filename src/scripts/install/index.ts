@@ -1,9 +1,9 @@
-import { INSTALL_LIST } from "../../const/types";
-import { createList } from "../../utils/list";
-import { installExtensions } from "./installExtensions";
-import { installFull } from "./installFull";
-import { installSettings } from "./installSettings";
-import { installSnippets } from "./installSnippets";
+import { createList } from 'utils/list';
+import { installExtensions } from './installExtensions';
+import { installFull } from './installFull';
+import { installSettings } from './installSettings';
+import { installSnippets } from './installSnippets';
+import { INSTALL_LIST } from 'const/types';
 
 const choices = [
   {
@@ -24,10 +24,10 @@ const choices = [
   }
 ];
 
-export const installHandler = () => createList({
-  list_name: INSTALL_LIST,
-  list_message: 'choose install command:',
+export const installHandler = () =>
+  createList({
+    list_name: INSTALL_LIST,
+    list_message: 'choose install command:',
 
-  choices
-});
-
+    choices
+  });

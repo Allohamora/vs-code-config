@@ -4,7 +4,7 @@ export const log = console.log;
 const errorLog = console.error;
 
 const successColor = chalk.rgb(61, 204, 83);
-const errorColor  = chalk.rgb(220, 20, 60);
+const errorColor = chalk.rgb(220, 20, 60);
 const infoColor = chalk.hex('#448AFF');
 
 export const success = (info: string) => {

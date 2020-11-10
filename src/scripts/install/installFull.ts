@@ -1,7 +1,7 @@
-import { createScript } from "../../utils/script";
-import { installExtensions } from "./installExtensions";
-import { installSettings } from "./installSettings";
-import { installSnippets } from "./installSnippets";
+import { createScript } from 'utils/script';
+import { installExtensions } from './installExtensions';
+import { installSettings } from './installSettings';
+import { installSnippets } from './installSnippets';
 
 export const installFull = createScript({
   startMsg: 'Started full install',

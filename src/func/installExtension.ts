@@ -5,7 +5,8 @@ const exec = promisify(execCallback);
 
 export const installExtension = async (extension: string) => {
   const { stdout } = await exec(`code --install-extension ${extension} 2>&1 | tee`);
-  
+
+  // eslint-disable-next-line
   const [installLog, packageLog] = stdout.split('\n');
 
   return packageLog;

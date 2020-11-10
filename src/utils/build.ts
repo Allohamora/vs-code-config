@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs-extra';
-import { BUILD_PATH } from '../const/paths';
-import { ncp } from './ncp';
+import { ncp } from 'utils/ncp';
+import { BUILD_PATH } from 'const/paths';
 
 export const getPath = (pathName: string) => path.join(BUILD_PATH, pathName);
 
@@ -10,15 +10,15 @@ const isBuildDirExists = async () => await fs.pathExists(BUILD_PATH);
 const buildDir = async () => {
   const isBuildExists = await isBuildDirExists();
 
-  if( isBuildExists ) return;
+  if (isBuildExists) return;
 
   await fs.mkdir(BUILD_PATH);
 };
 
 export const addFile = async (
-  name: string, 
-  data: Parameters<typeof fs.writeFile>[1], 
-  options?: Parameters<typeof fs.writeFile>[2],
+  name: string,
+  data: Parameters<typeof fs.writeFile>[1],
+  options?: Parameters<typeof fs.writeFile>[2]
 ) => {
   await buildDir();
 
@@ -27,7 +27,7 @@ export const addFile = async (
   await fs.writeFile(pathToFile, data, options);
 };
 
-export const copy = async (from: string, dir: string = "") => {
+export const copy = async (from: string, dir = '') => {
   await buildDir();
 
   const to = getPath(dir);

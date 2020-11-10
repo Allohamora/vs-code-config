@@ -1,5 +1,5 @@
-import { setSettings } from "../../func/setSettings";
-import { createScript } from "../../utils/script";
+import { setSettings } from 'func/setSettings';
+import { createScript } from 'utils/script';
 
 export const installSettings = createScript({
   startMsg: 'Started install for settings',
@@ -7,4 +7,3 @@ export const installSettings = createScript({
 
   script: async () => await setSettings()
 });
-

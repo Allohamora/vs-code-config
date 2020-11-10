@@ -2,26 +2,21 @@ import { prompt } from 'inquirer';
 
 type Handler = () => Promise<void>;
 
-interface Choice { 
-  name: string, 
-  value: Handler 
-};
-
-interface CreateListParams {
-  list_name: string, 
-  list_message: string,
-
-  choices: Choice[],
+interface Choice {
+  name: string;
+  value: Handler;
 }
 
-export const createList = async ({ 
-  list_name, 
-  list_message,
-  choices 
-}: CreateListParams) => {
+interface CreateListParams {
+  list_name: string;
+  list_message: string;
 
+  choices: Choice[];
+}
+
+export const createList = async ({ list_name, list_message, choices }: CreateListParams) => {
   const answers = await prompt({
-    type: 'list', 
+    type: 'list',
     message: list_message,
     name: list_name,
 

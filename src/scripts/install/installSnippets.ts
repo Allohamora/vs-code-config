@@ -1,5 +1,5 @@
-import { setSnippets } from "../../func/setSnippets"
-import { createScript } from "../../utils/script";
+import { setSnippets } from 'func/setSnippets';
+import { createScript } from 'utils/script';
 
 export const installSnippets = createScript({
   startMsg: 'Started install for snippets',
