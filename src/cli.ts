@@ -5,6 +5,7 @@ import { buildSettings } from './scripts/buildSettings';
 import { buildSnippets } from './scripts/buildSnippets';
 import { buildFull } from './scripts/buildFull';
 import { installExtensions } from './scripts/installExtensions';
+import { installSettings } from './scripts/installSettings';
 
 const prompts = [
   {
@@ -31,6 +32,10 @@ const prompts = [
       {
         value: installExtensions,
         name: 'install extensions from build'
+      },
+      {
+        value: installSettings,
+        name: 'install settings from build'
       }
     ] 
   },

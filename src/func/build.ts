@@ -1,13 +1,12 @@
 import * as path from 'path';
-import * as ncpCallback from 'ncp';
 import { promises as fs } from 'fs';
-import { promisify } from 'util';
 import { BUILD_PATH } from '../utils/paths';
 import { error, success } from '../func/log';
-
-const ncp = promisify(ncpCallback);
+import { ncp } from '../utils/ncp';
 
 const successAdded = (item: string) => success(`Success added ${item} to build!`);
+
+export const getPath = (pathName: string) => path.join(BUILD_PATH, pathName);
 
 const isBuildDirExists = async () => {
   try {
@@ -34,7 +33,7 @@ export const addFile = async (
 ) => {
   await buildDir();
 
-  const pathToFile = path.join(BUILD_PATH, name);
+  const pathToFile = getPath(name);
 
   await fs.writeFile(pathToFile, data, options);
 
@@ -44,7 +43,7 @@ export const addFile = async (
 export const copy = async (from: string, dir: string = "") => {
   await buildDir();
 
-  const to = path.join(BUILD_PATH, dir);
+  const to = getPath(dir);
 
   try {
     await ncp(from, to);
@@ -56,7 +55,7 @@ export const copy = async (from: string, dir: string = "") => {
 };
 
 export const getFile = async (name: string) => {
-  const fullPath = path.join(BUILD_PATH, name);
+  const fullPath = getPath(name);
 
   const file = await fs.readFile(fullPath);
   const string = file.toString();

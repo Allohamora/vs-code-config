@@ -20,12 +20,14 @@
   "homepage": "https://github.com/Allohamora/vs-code-config#readme",
   "dependencies": {
     "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
     "inquirer": "^7.3.3",
     "ncp": "^2.0.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.3",
     "@types/inquirer": "^7.3.1",
     "@types/ncp": "^2.0.4",
     "@types/node": "^14.14.6",
