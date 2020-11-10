@@ -36,7 +36,7 @@ export const addFile = async (
 
   const pathToFile = path.join(BUILD_PATH, name);
 
-  await fs.writeFile( pathToFile, data, options);
+  await fs.writeFile(pathToFile, data, options);
 
   successAdded(name);
 };
