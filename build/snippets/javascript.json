@@ -17,11 +17,11 @@
     "body": [
       "import React from 'react';",
       "",
-      "export const $1 = (props) => {",
+      "export const $1 = () => {",
       "",
-      "\treturn (",
-      "\t\t<div>${1}</div>",
-      "\t);",
+      " return (",
+      "   <div>${1}</div>",
+      " );",
       "};",
       "",
     ],
@@ -32,11 +32,11 @@
     "body": [
       "import React from 'react';",
       "",
-      "export default function $1(props){",
+      "export default function $1(){",
       "",
-      "\treturn (",
-      "\t\t<div>${1}</div>",
-      "\t);",
+      " return (",
+      "   <div>${1}</div>",
+      " );",
       "};",
       ""
     ],
@@ -60,8 +60,10 @@
   "Export const function": {
     "prefix": "ecf",
     "body": [
-      "export const $1 = () => {\n",
-      "}\n"
+      "export const $1 = () => {",
+      "",
+      "};",
+      ""
     ],
     "description": "export const function"
   }

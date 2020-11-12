@@ -15,13 +15,16 @@
   "Export function component": {
     "prefix": "efc",
     "body": [
-      "import React from 'react';\n",
-      "interface $1Props {};\n",
-      "export const $1: React.FC<$1Props> = (props) => {",
-      "\treturn (",
-      "\t\t<div>$1</div>",
-      "\t);",
-      "};\n"
+      "import React from 'react';",
+      "",
+      "interface $1Props {}",
+      "",
+      "export const $1: React.FC<$1Props> = () => {",
+      " return (",
+      "   <div>$1</div>",
+      " );",
+      "};",
+      ""
     ],
     "description": "export function component"
   },
