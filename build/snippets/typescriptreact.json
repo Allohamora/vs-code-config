@@ -18,7 +18,7 @@
 		"body": [
 			"import React from 'react';\n",
 			"interface $1Props {};\n",
-			"export const $1: React.FC<$1Props> = props => {",
+			"export const $1: React.FC<$1Props> = (props) => {",
 			"\treturn (",
 			"\t\t<div>$1</div>",
 			"\t);",
@@ -41,5 +41,13 @@
 			"export { $1 };"
 		],
 		"description": "export function component with styles"
-	},
+  },
+  "Re-export all": {
+    "prefix": "rea",
+		"body": [
+      "export * from './$1'",
+      ""
+		],
+		"description": "re-export all"
+  }
 }
