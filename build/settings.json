@@ -45,14 +45,14 @@
             },
             {
               "fileName": "styles.js",
-              "template": "styles",
+              "template": "styles"
             },
             {
               "fileName": "use<FFSName>.js",
               "template": "hook"
             },
             {
-              "fileName": "utils.js",
+              "fileName": "service.js"
             }
           ]
         },
@@ -69,14 +69,14 @@
             },
             {
               "fileName": "styles.ts",
-              "template": "styles",
+              "template": "styles"
             },
             {
               "fileName": "use<FFSName>.ts",
               "template": "hook.ts"
             },
             {
-              "fileName": "utils.ts",
+              "fileName": "service.ts"
             }
           ]
         },
@@ -90,10 +90,6 @@
             {
               "fileName": "index.js",
               "template": "index"
-            },
-            {
-              "fileName": "styles.js",
-              "template": "styles",
             }
           ]
         },
@@ -107,10 +103,6 @@
             {
               "fileName": "index.ts",
               "template": "index"
-            },
-            {
-              "fileName": "styles.ts",
-              "template": "styles",
             }
           ]
         }
@@ -121,9 +113,7 @@
           "",
           "export const <FFSName> = (props) => {",
           "  return (",
-          "    <div>",
-          "      <FFSName>",
-          "    </div>",
+          "    <div><FFSName></div>",
           "  );",
           "};",
           ""
@@ -131,16 +121,12 @@
         "component.ts": [
           "import React from 'react';",
           "",
-          "interface <FFSName>Props {",
-          "",
-          "};",
+          "interface <FFSName>Props {};",
           "",
           "export const <FFSName>: React.FC<<FFSName>Props> = (props) => {",
           "",
           "  return (",
-          "    <div>",
-          "      <FFSName>",
-          "    </div>",
+          "    <div><FFSName></div>",
           "  );",
           "};",
           ""
@@ -153,9 +139,7 @@
           "  const {} = use<FFSName>();",
           "",
           "  return (",
-          "    <div>",
-          "      <FFSName>",
-          "    </div>",
+          "    <div><FFSName></div>",
           "  );",
           "};",
           ""
@@ -164,17 +148,13 @@
           "import React from 'react';",
           "import { use<FFSName> } from './use<FFSName>';",
           "",
-          "interface <FFSName>Props {",
-          "",
-          "};",
+          "interface <FFSName>Props {};",
           "",
           "export const <FFSName>: React.FC<<FFSName>Props> = (props) => {",
           "  const {} = use<FFSName>();",
           "",
           "  return (",
-          "    <div>",
-          "      <FFSName>",
-          "    </div>",
+          "    <div><FFSName></div>",
           "  );",
           "};",
           ""
@@ -185,9 +165,7 @@
           "};"
         ],
         "hook.ts": [
-          "interface use<FFSName>Props {",
-          "",
-          "};",
+          "interface use<FFSName>Props {};",
           "",
           "export const use<FFSName> = (props: use<FFSName>Props) => {",
           "  return {};",
@@ -197,7 +175,7 @@
           "export * from './<FFSName>';"
         ],
         "styles": [
-          "import styled from 'styles-components';",
+          "import styled from 'styled-components';",
           ""
         ]
       }

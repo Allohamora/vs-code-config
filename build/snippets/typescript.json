@@ -18,7 +18,15 @@
 			"export const $1: '$1' = '$1';"
 		],
 		"description": "Export Redux Const Type"
-	},
+  },
+  "Re-export all": {
+    "prefix": "rea",
+		"body": [
+      "export * from './$1'",
+      ""
+		],
+		"description": "re-export all"
+  },
 	"Export Redux Type": {
 		"prefix": "ert",
 		"body": [
