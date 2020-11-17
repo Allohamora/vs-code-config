@@ -17,6 +17,20 @@
     "body": [
       "import React from 'react';",
       "",
+      "export const $1: React.FC = () => {",
+      " return (",
+      "   <div>$1</div>",
+      " );",
+      "};",
+      ""
+    ],
+    "description": "export function component"
+  },
+  "Export function component with interface": {
+    "prefix": "efci",
+    "body": [
+      "import React from 'react';",
+      "",
       "interface $1Props {}",
       "",
       "export const $1: React.FC<$1Props> = () => {",
@@ -26,7 +40,7 @@
       "};",
       ""
     ],
-    "description": "export function component"
+    "description": "export function component with interface"
   },
   "Re-export all": {
     "prefix": "rea",
