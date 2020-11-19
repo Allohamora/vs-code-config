@@ -29,7 +29,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "fastFolderStructure.structures": [
     {
-      "name": "full-component",
+      "name": "hook-component",
       "structure": [
         {
           "fileName": "<FFSName>.js",
@@ -38,10 +38,6 @@
         {
           "fileName": "index.js",
           "template": "index"
-        },
-        {
-          "fileName": "styles.js",
-          "template": "styles"
         },
         {
           "fileName": "use<FFSName>.js",
@@ -53,7 +49,7 @@
       ]
     },
     {
-      "name": "full-component.ts",
+      "name": "hook-component.ts",
       "structure": [
         {
           "fileName": "<FFSName>.tsx",
@@ -62,10 +58,6 @@
         {
           "fileName": "index.ts",
           "template": "index"
-        },
-        {
-          "fileName": "styles.ts",
-          "template": "styles"
         },
         {
           "fileName": "use<FFSName>.ts",
@@ -107,48 +99,56 @@
     "component": [
       "import React from 'react';",
       "",
-      "export const <FFSName> = () => {",
+      "const <FFSName> = () => {",
       "  return (",
       "    <div><FFSName></div>",
       "  );",
       "};",
+      "",
+      "export default <FFSName>;",
       ""
     ],
     "component.ts": [
       "import React from 'react';",
       "",
-      "export const <FFSName>: React.FC = () => {",
+      "const <FFSName>: React.FC = () => {",
       "",
       "  return (",
       "    <div><FFSName></div>",
       "  );",
       "};",
+      "",
+      "export default <FFSName>;",
       ""
     ],
     "component-with-hook": [
       "import React from 'react';",
       "import { use<FFSName> } from './use<FFSName>';",
       "",
-      "export const <FFSName> = () => {",
+      "const <FFSName> = () => {",
       "  const {} = use<FFSName>();",
       "",
       "  return (",
       "    <div><FFSName></div>",
       "  );",
       "};",
+      "",
+      "export default <FFSName>;",
       ""
     ],
     "component-with-hook.ts": [
       "import React from 'react';",
       "import { use<FFSName> } from './use<FFSName>';",
       "",
-      "export const <FFSName>: React.FC = () => {",
+      "const <FFSName>: React.FC = () => {",
       "  const {} = use<FFSName>();",
       "",
       "  return (",
       "    <div><FFSName></div>",
       "  );",
       "};",
+      "",
+      "export default <FFSName>;",
       ""
     ],
     "hook": [
@@ -157,11 +157,7 @@
       "};"
     ],
     "index": [
-      "export * from './<FFSName>';"
-    ],
-    "styles": [
-      "import styled from 'styled-components';",
-      ""
+      "export { default } from './<FFSName>';"
     ]
   }
 }

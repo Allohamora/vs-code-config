@@ -17,13 +17,15 @@
     "body": [
       "import React from 'react';",
       "",
-      "export const $1 = () => {",
+      "const $1 = () => {",
       "",
       " return (",
       "   <div>${1}</div>",
       " );",
       "};",
       "",
+      "export default $1;",
+      ""
     ],
     "description": "export function component"
   },
@@ -45,9 +47,7 @@
   "Reexport default": {
     "prefix": "reed",
     "body": [
-      "import $1 from './${1}';",
-      "",
-      "export default $1;",
+      "export { default } from './${1}';",
       ""
     ],
     "description": "reexport default"
