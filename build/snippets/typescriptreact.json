@@ -17,11 +17,13 @@
     "body": [
       "import React from 'react';",
       "",
-      "export const $1: React.FC = () => {",
+      "const $1: React.FC = () => {",
       " return (",
       "   <div>$1</div>",
       " );",
       "};",
+      "",
+      "export default $1;",
       ""
     ],
     "description": "export function component"
@@ -33,11 +35,13 @@
       "",
       "interface $1Props {}",
       "",
-      "export const $1: React.FC<$1Props> = () => {",
+      "const $1: React.FC<$1Props> = () => {",
       " return (",
       "   <div>$1</div>",
       " );",
       "};",
+      "",
+      "export default $1;",
       ""
     ],
     "description": "export function component with interface"
@@ -49,5 +53,12 @@
       ""
     ],
     "description": "re-export all"
+  },
+  "Re-export default": {
+    "prefix": "reed",
+    "body": [
+      "export { default } from './$1';",
+      ""
+    ]
   }
 }

@@ -27,6 +27,14 @@
     ],
     "description": "re-export all"
   },
+  "Re-export default": {
+    "prefix": "reed",
+    "body": [
+      "export { default } from './$1'",
+      ""
+    ],
+    "description": "re-export all"
+  },
   "Export Redux Type": {
     "prefix": "ert",
     "body": [
