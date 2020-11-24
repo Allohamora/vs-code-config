@@ -157,7 +157,8 @@
       "};"
     ],
     "index": [
-      "export { default } from './<FFSName>';"
+      "export { default } from './<FFSName>';",
+      "export * from './<FFSName>';"
     ]
   }
 }

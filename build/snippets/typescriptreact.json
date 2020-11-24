@@ -58,6 +58,7 @@
     "prefix": "reed",
     "body": [
       "export { default } from './$1';",
+      "export * from './$1';",
       ""
     ]
   }

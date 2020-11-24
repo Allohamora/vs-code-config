@@ -30,7 +30,8 @@
   "Re-export default": {
     "prefix": "reed",
     "body": [
-      "export { default } from './$1'",
+      "export { default } from './$1';",
+      "export * from './$1';",
       ""
     ],
     "description": "re-export all"
