@@ -3,7 +3,6 @@ import { buildHandler } from 'scripts/build';
 import { installHandler } from 'scripts/install';
 import { MAIN_LIST } from 'const/types';
 
-
 const choices = [
   {
     name: 'build section',

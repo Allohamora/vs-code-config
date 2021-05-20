@@ -13,7 +13,7 @@ const getInstallCommand = (extension: string) => {
     default:
       throw new Error('incorrect os type!');
   }
-}
+};
 
 export const installExtension = async (extension: string) => {
   const { stdout } = await exec(getInstallCommand(extension));

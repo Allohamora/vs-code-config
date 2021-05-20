@@ -13,13 +13,13 @@ const mapStdoutToExtensions = (stdout: string): Extensions => {
 const getExtensionsCommand = () => {
   switch (true) {
     case isWindows:
-      return "code --list-extensions";
+      return 'code --list-extensions';
     case isLinux:
-      return "code --list-extensions 2>&1 | tee";
+      return 'code --list-extensions 2>&1 | tee';
     default:
       throw Error('not supported os type!');
   }
-}
+};
 
 const extensionsCommand = getExtensionsCommand();
 
