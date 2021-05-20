@@ -14,8 +14,8 @@ export const installExtensions = createScript({
 
     const extensions = JSON.parse(extensionsJSON) as Extensions;
 
-    await Promise.all(
-      extensions.map((extension) => installExtension(extension).then((log) => info(log)))
-    );
+    await extensions.reduce((chain, extension) => {
+      return chain.then(() => installExtension(extension).then((log) => info(log)));
+    }, Promise.resolve());
   }
 });
